@@ -44,4 +44,6 @@
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
 [commit]
-	gpgsign = true
+  gpgsign = true
+[remote "origin"]
+  prune = true
