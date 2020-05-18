@@ -14,6 +14,7 @@
 .byebug_hist
 .lldb
 .psql_history
+.pry_history
 .sqlite_history
 .config
 .rnd
@@ -23,12 +24,18 @@
 
 .rubies
 .bundler
+.bundle
+.cache
+.local
 .berkshelf
 .chef
 .gem
 .boot2docker
+.docker
+.kube
 .vagrant*
 .virtualenvs
+.terraform.d
 .aws
 .config.yaml
 .gnupg
@@ -50,7 +57,7 @@ Applications/
 Desktop/
 Development/
 Documents/
-Downloads/
+Downloads
 .dropbox*
 Dropbox/
 Encoding/
