@@ -25,3 +25,6 @@ bell_msg            ' -bing!- (%n - %t)'
 vbell               on
 vbell_msg           ' -bing!- '
 vbellwait           5
+
+# Allow mouse scrolling on current buffer
+termcapinfo xterm* ti@:te@
