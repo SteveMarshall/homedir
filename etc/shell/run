@@ -1,0 +1,47 @@
+# ~/etc/shell/run
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*-
+# 
+# anything in this file gets applied to every shell, login or otherwise
+
+# useful flags
+hostos=`uname`
+if [[ $hostos == CYGWIN* ]] ; then
+    hostname=`hostname`
+else
+    hostname=`hostname -s`
+fi
+
+export HOSTOS="${hostos}"
+export HOST="${hostname}"
+
+interactive=1
+[[ $- != *i* ]] && interactive=0
+
+
+# early - functions could be required at any time, so are included first
+for rc_file in $( echo ~/etc/shell/early/* ); do
+  source $rc_file
+done
+
+
+# os-specific settings
+source_if_exists ~/etc/shell/os/${hostos}
+
+# type-specific settings
+source_if_exists ~/etc/shell/arch/${HOSTTYPE}
+
+# host-specific settings
+source_if_exists ~/etc/shell/host/${hostname}
+
+
+# most common shell settings kept in separate rc files
+for rc_file in $( echo ~/etc/shell/rc/* ); do
+    source $rc_file
+done
+
+
+# prompt and secrets come last
+source_if_exists ~/etc/shell/secrets
+source_or_warn ~/etc/shell/prompt
+export PS1
+export PATH
