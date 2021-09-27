@@ -1,0 +1,39 @@
+# ~/etc/shell/prompt
+#       Setup the prompt environment variables.
+
+autoload -Uz add-zsh-hook vcs_info
+add-zsh-hook precmd vcs_info
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr '*'
+zstyle ':vcs_info:*' stagedstr '*'
+
+function +vi-git-abbrv-main() {
+    hook_com[branch]=${hook_com[branch]/#%main/}
+}
+
+zstyle ':vcs_info:git+set-message:*' hooks \
+  git-abbrv-main \
+  git-combine-staged-unstaged \
+  git-untracked
+function +vi-git-combine-staged-unstaged() {
+  hook_com[misc]="${hook_com[staged]:-${hook_com[unstaged]}}"
+}
+
+function +vi-git-untracked() {
+  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+     git status --porcelain | grep -m 1 '^??' &>/dev/null
+  then
+    hook_com[misc]+='+'
+  fi
+}
+
+zstyle ':vcs_info:*' formats       ' %b:%m'
+zstyle ':vcs_info:*' actionformats ' %b/%a:%m'
+
+setopt PROMPT_SUBST
+
+if [ -n "$SSH_TTY" ]; then
+  PS1='(%n@%m %F{yellow}%1~%f%F{green}$vcs_info_msg_0_%f)%(!.#.$) '
+else
+  PS1='(%F{yellow}%1~%f%F{green}$vcs_info_msg_0_%f)%(!.#.$) '
+fi
