@@ -1,0 +1,6 @@
+# ~/etc/bash/rc/textmate
+
+if [ -x /usr/local/bin/mate ] && [ -z "${SSH_CONNECTION:-}" ]; then
+  export EDITOR="/usr/local/bin/mate -w"
+  export VISUAL="/usr/local/bin/mate -w"
+fi

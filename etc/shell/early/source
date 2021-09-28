@@ -1,0 +1,24 @@
+# ~/etc/shell/function/source_or_warn
+# source a file, echoing a warning if it doesn't exist
+
+
+function source_or_warn {
+  autoload -Uz colors && colors
+
+  file=${1}
+
+  if [ -f ${file} ]; then
+    source ${file}
+  else
+    [ ${interactive} ]  && print "${fg_bold[red]}${file} does not exist${reset_color}"
+  fi
+}
+
+
+function source_if_exists {
+  file=${1}
+
+  if [ -f ${file} ]; then
+    source ${file}
+  fi
+}

@@ -1,0 +1,28 @@
+# ~/etc/shell/rc/files
+# useful output when working with files
+
+alias   diff='diff -u'
+
+alias    f.='find .'
+
+function fgr() {
+  find . \
+    -not -iwholename '*.svn/*' -and \
+    -not -iwholename '*.git/*' \
+  | grep -i $1
+}
+function fgx() {
+  find . \
+    -not -type d -and \
+    -not -iwholename '*.svn/*' -and \
+    -not -iwholename '*.git/*' \
+    -print0 \
+  | xargs -0 grep -i $1
+}
+
+alias   ll='ls -la'
+alias   ls='ls -F'
+
+alias   mkdir='mkdir -p'
+
+alias   rm='rm -i'

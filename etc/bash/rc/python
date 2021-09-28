@@ -1,8 +1,0 @@
-# ~/etc/bash/rc/python
-# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*-
-#
-# working with python
-
-[ -x /usr/local/bin/virtualenvwrapper.sh ] && \
-  python -c 'import virtualenvwrapper' 2>/dev/null 1>/dev/null && \
-  . /usr/local/bin/virtualenvwrapper.sh

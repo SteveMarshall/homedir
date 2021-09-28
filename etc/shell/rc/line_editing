@@ -1,0 +1,13 @@
+# ~/etc/shell/rc/line_editing
+# Line editing
+
+# Autocorrect typos
+setopt CORRECT
+setopt CORRECT_ALL
+
+# Case-insensitive globbing (used in pathname expansion)
+setopt GLOB_COMPLETE
+
+# Don't consider punctuation to be word-characters when deleting/moving
+# See https://zsh.sourceforge.io/Guide/zshguide04.html#l87
+WORDCHARS=''

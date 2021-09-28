@@ -1,7 +1,0 @@
-# ~/etc/bash/rc/textmate
-# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*-
-
-if [ -x ${HOME}/bin/mate ] && [ -z "${SSH_CONNECTION:-}" ]; then
-  export EDITOR="mate -w"
-  export VISUAL="mate -w"
-fi

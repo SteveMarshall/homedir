@@ -1,0 +1,5 @@
+# ~/etc/bash/rc/git
+
+autoload -Uz compinit && compinit
+
+alias gi=git
