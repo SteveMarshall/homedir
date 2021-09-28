@@ -1,6 +1,4 @@
-# ~/etc/bash/rc/ruby
-# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*-
-#
+# ~/etc/shell/rc/ruby
 # working with ruby
 
 if [ -d /usr/local/share/chruby ]; then

@@ -1,0 +1,4 @@
+# ~/etc/shell/rc/screen
+# screenrc config
+
+export SCREENRC=~/etc/screen
