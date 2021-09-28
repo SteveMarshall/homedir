@@ -1,0 +1,22 @@
+# ~/etc/bash/rc/history
+# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*-
+#
+# control history capturing
+
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE="${HOME}/etc/shell/saved_history"
+
+setopt SHARE_HISTORY
+
+# Remove all earlier duplicate commands from history
+setopt HIST_IGNORE_ALL_DUPS
+
+# Don't add commands starting with space to history
+setopt HIST_IGNORE_SPACE
+
+# Remove unnecessary blanks from history
+setopt HIST_REDUCE_BLANKS
+
+bindkey '^[[A' up-line-or-search # up arrow
+bindkey '^[[B' down-line-or-search # down arrow
