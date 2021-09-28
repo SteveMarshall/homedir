@@ -1,0 +1,4 @@
+# ~/etc/shell/rc/rsync
+# commonly used rsync options
+
+export RSYNC_RSH='/usr/bin/ssh'
