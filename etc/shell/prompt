@@ -33,7 +33,7 @@ zstyle ':vcs_info:*' actionformats ' %b/%a:%m'
 setopt PROMPT_SUBST
 
 if [[ -n "$SSH_CONNECTION" ]]; then
-  PS1='(%n@%m %F{yellow}%1~%f%F{green}$vcs_info_msg_0_%f)%(!.#.$) '
+  PS1='(%m %F{yellow}%1~%f%F{green}$vcs_info_msg_0_%f)%(!.#.$) '
 else
   PS1='(%F{yellow}%1~%f%F{green}$vcs_info_msg_0_%f)%(!.#.$) '
 fi
