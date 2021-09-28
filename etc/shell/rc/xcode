@@ -1,0 +1,4 @@
+if command -v xcode-select &> /dev/null; then
+  xcode_path=`xcode-select --print-path`
+  PATH="${PATH}:${xcode_path}/usr/bin"
+fi
