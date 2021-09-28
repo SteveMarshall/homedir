@@ -1,13 +1,24 @@
-# ~/etc/bash/rc/files
-# -*- Mode: Bash; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*-
-#
+# ~/etc/shell/rc/files
 # useful output when working with files
 
 alias   diff='diff -u'
 
 alias    f.='find .'
-alias   fgr='find . -not -iwholename '*.svn/*' -and -not -iwholename '*.git/*' | grep -i'
-alias   fgx='find . -not -type d -and -not -iwholename '*.svn/*' -and -not -iwholename '*.git/*' -print0 | xargs -0 grep -i'
+
+function fgr() {
+  find . \
+    -not -iwholename '*.svn/*' -and \
+    -not -iwholename '*.git/*' \
+  | grep -i $1
+}
+function fgx() {
+  find . \
+    -not -type d -and \
+    -not -iwholename '*.svn/*' -and \
+    -not -iwholename '*.git/*' \
+    -print0 \
+  | xargs -0 grep -i $1
+}
 
 alias   ll='ls -la'
 alias   ls='ls -F'
