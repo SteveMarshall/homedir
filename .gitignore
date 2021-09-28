@@ -1,4 +1,6 @@
-.bash_sessions
+.zcompcache
+.zcompdump
+.zsh_sessions
 
 .CFUserTextEncoding
 .com.apple.timemachine.supported
@@ -46,8 +48,8 @@ cookbooks
 bin/mate
 bin/HandBrakeCLI
 
-etc/bash/saved_history
-etc/bash/secrets
+etc/shell/saved_history
+etc/shell/secrets
 etc/less_history
 etc/macos/
 
