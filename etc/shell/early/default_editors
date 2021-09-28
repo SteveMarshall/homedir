@@ -1,0 +1,5 @@
+# ~/etc/shell/early/default_editors
+# Default editors if nothing else is available
+
+export VISUAL='vi'
+export EDITOR='vi'
