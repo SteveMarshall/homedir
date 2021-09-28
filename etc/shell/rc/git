@@ -3,4 +3,3 @@
 autoload -Uz compinit && compinit
 
 alias gi=git
-alias gti=git
