@@ -21,6 +21,7 @@
 .config
 .rnd
 .skipbuddy
+.swiftpm
 
 .ssh
 
