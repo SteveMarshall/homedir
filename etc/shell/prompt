@@ -7,14 +7,17 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '*'
 zstyle ':vcs_info:*' stagedstr '*'
 
-function +vi-git-abbrv-main() {
-    hook_com[branch]=${hook_com[branch]/#%main/}
-}
-
 zstyle ':vcs_info:git+set-message:*' hooks \
-  git-abbrv-main \
+  git-abbrv-default-branch \
   git-combine-staged-unstaged \
   git-untracked
+
+DEFAULT_BRANCH=$( git config --get init.defaultBranch )
+
+function +vi-git-abbrv-default-branch() {
+    hook_com[branch]=${hook_com[branch]/#%${DEFAULT_BRANCH}/}
+}
+
 function +vi-git-combine-staged-unstaged() {
   hook_com[misc]="${hook_com[staged]:-${hook_com[unstaged]}}"
 }
