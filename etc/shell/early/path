@@ -3,4 +3,9 @@
 
 PATH="/usr/local/sbin:${PATH}"
 PATH="${HOME}/bin:${PATH}"
-PATH="bin:${PATH}"
+PATH="${PWD}/bin:${PATH}"
+
+function update_local_bin_path() {
+  export PATH="${PATH//:$OLDPWD\/bin:/:$PWD/bin:}"
+}
+chpwd_functions=(${chpwd_functions[@]} "update_local_bin_path")
