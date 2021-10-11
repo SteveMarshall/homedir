@@ -1,0 +1,14 @@
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _extensions _complete _approximate
+zstyle :compinstall filename '/Users/Steven/etc/shell/rc/completion'
+
+autoload -Uz compinit && compinit
+# End of lines added by compinstall
+
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' format '%F{cyan}-- %d --%f'
+zstyle ':completion:*:warnings' format ' %F{red}-- No matches found --%f'
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' rehash true
