@@ -58,7 +58,7 @@ var/encoder.pid
 
 Applications/
 Desktop/
-Development/
+Developer/
 Documents/
 Downloads
 .dropbox*
