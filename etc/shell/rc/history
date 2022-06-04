@@ -18,5 +18,9 @@ setopt HIST_IGNORE_SPACE
 # Remove unnecessary blanks from history
 setopt HIST_REDUCE_BLANKS
 
-bindkey '^[[A' up-line-or-search # up arrow
-bindkey '^[[B' down-line-or-search # down arrow
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search # up arrow
+bindkey '^[[B' down-line-or-beginning-search # down arrow
