@@ -42,6 +42,7 @@
 .aws
 .config.yaml
 .gnupg
+.fly
 
 soloistrc
 cookbooks
