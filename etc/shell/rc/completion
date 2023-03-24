@@ -1,5 +1,12 @@
 # The following lines were added by compinstall
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 zstyle ':completion:*' completer _extensions _complete _approximate
 zstyle :compinstall filename '/Users/Steven/etc/shell/rc/completion'
 
