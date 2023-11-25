@@ -1,6 +1,6 @@
 fontName         = "SF Mono"
 fontSize         = 11
-include          = {*,.tm_properties,.htaccess,.htpasswd,.gitignore,.kitchen.yml,.travis.yml,.swiftlint.yml,.env}
+include          = {*,.tm_properties,.htaccess,.htpasswd,.gitignore,.kitchen.yml,.travis.yml,.swiftlint.yml,.env,.github,.well-known}
 showInvisibles   = true
 showWrapColumn   = true
 softTabs         = true
