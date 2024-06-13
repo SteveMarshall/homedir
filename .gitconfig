@@ -16,6 +16,13 @@
 	hist = log --all --graph --pretty='[%C(cyan)%h%Creset]%C(bold cyan)%d%Creset %s (%an)'
 	lp = log -p
   tst = st
+  nb = "!git pull --rebase; !git branch $1"
+  gone =! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+
+  branch-url=! "BRANCH=$(git branch --show-current) ; echo $(git remote get-url origin | sed 's#:#/#g; s#git@#https://#; s#\\.git#/#')tree/${BRANCH}"
+  pr-url=! "echo $(git branch-url | sed 's#/tree/#/compare/#')?expand=1"
+  browse =! "open $(git branch-url)"
+  pull-request =! "open $(git pr-url)"
 [core]
 	excludesfile = ~/etc/git/ignore
 [credential]
