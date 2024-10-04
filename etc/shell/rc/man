@@ -1,0 +1,3 @@
+# ~/etc/shell/rc/man
+
+export MANPAGER="less -R --use-color -Dd+y -Du+208 -DN+r"
