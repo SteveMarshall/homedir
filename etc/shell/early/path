@@ -1,7 +1,6 @@
 # ~/etc/shell/rc/path
 # common updates to the default path
 
-PATH="/usr/local/sbin:${PATH}"
 PATH="${HOME}/bin:${PATH}"
 PATH="${PWD}/bin:${PATH}"
 

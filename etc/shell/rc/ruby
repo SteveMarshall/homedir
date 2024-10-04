@@ -1,9 +1,10 @@
 # ~/etc/shell/rc/ruby
 # working with ruby
 
-if [ -d /usr/local/share/chruby ]; then
-	source /usr/local/share/chruby/chruby.sh
-	source /usr/local/share/chruby/auto.sh
+CHRUBY_PATH="$(brew --prefix)/share/chruby"
+if [ -d "${CHRUBY_PATH}" ]; then
+	source "${CHRUBY_PATH}/chruby.sh"
+	source "${CHRUBY_PATH}/auto.sh"
 fi
 
 alias bx='bundle exec'
