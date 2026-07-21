@@ -3,6 +3,7 @@
 
 PATH="${HOME}/bin:${PATH}"
 PATH="${PWD}/bin:${PATH}"
+PATH="${PWD}:${PATH}"
 
 function update_local_bin_path() {
   export PATH="${PATH//:$OLDPWD\/bin:/:$PWD/bin:}"
