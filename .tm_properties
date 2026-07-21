@@ -5,6 +5,8 @@ showInvisibles   = true
 showWrapColumn   = true
 softTabs         = true
 softWrap         = false
+# Use cmark-gfm for the Markdown preview so tables render (Markdown.pl can't)
+TM_MARKDOWN      = "/opt/homebrew/bin/cmark-gfm -e table -e strikethrough -e autolink"
 spellChecking    = true
 spellingLanguage = en_GB
 wrapColumn       = 72
