@@ -1,6 +1,8 @@
 # ~/etc/shell/rc/path
 # common updates to the default path
 
+export PATH="/Users/Steven/.local/bin:$PATH"
+
 PATH="${HOME}/bin:${PATH}"
 PATH="${PWD}/bin:${PATH}"
 PATH="${PWD}:${PATH}"

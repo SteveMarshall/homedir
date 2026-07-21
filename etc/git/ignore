@@ -7,3 +7,4 @@
 .hg
 
 xcuserdata
+**/.claude/settings.local.json

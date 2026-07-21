@@ -44,6 +44,10 @@
 .config.yaml
 .gnupg
 .fly
+.npm
+.rustup
+.cargo
+.claude.json
 
 soloistrc
 cookbooks
@@ -77,3 +81,9 @@ Sites/
 Sources/
 Virtual Machines/
 VirtualBox VMs/
+
+# Mozilla stuff
+.arcrc
+.firefox-devtools-mcp
+.mozbuild
+.moz-phab-config
