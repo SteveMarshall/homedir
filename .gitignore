@@ -18,6 +18,7 @@
 .psql_history
 .pry_history
 .sqlite_history
+.python_history
 .config
 .rnd
 .skipbuddy

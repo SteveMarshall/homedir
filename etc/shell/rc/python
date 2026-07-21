@@ -1,0 +1,26 @@
+autoload -U add-zsh-hook
+
+function python_venv_auto() {
+  local dir="$PWD"
+  local venv=""
+
+  while [[ "$dir" != "/" ]]; do
+    if [[ -x "$dir/.venv/bin/python" ]]; then
+      venv="$dir/.venv"
+      break
+    fi
+
+    dir="${dir:h}"
+  done
+
+  if [[ -n "$VIRTUAL_ENV" && "$VIRTUAL_ENV" != "$venv" ]]; then
+    (( $+functions[deactivate] )) && deactivate
+  fi
+
+  if [[ -n "$venv" && "$VIRTUAL_ENV" != "$venv" ]]; then
+    source "$venv/bin/activate"
+  fi
+}
+
+add-zsh-hook chpwd python_venv_auto
+python_venv_auto
